@@ -11,14 +11,18 @@
 #pragma comment (lib, "d3dcompiler.lib")
 
 
+
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	MSG msg;
-	Window mainWindow(hInstance);
+	D3D Direct3D(hInstance);
 
 
-	if (mainWindow.getWindow()) {
-		ShowWindow(mainWindow.getWindow(), nCmdShow);
-	}
+
+	
+
+
+
 
 	while (TRUE) {
 		//Check to see if any messages are waiting in the queue
@@ -35,6 +39,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				break;
 		}
 	}
-	DestroyWindow(mainWindow.getWindow());
+	DestroyWindow(Direct3D.getWindowObject().getWindow());
 	return 1;
 }
